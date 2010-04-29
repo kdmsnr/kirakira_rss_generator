@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+					"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>キラキラポッドキャストRSSジェネレータ</title>
+	</head>
+	<body>
+		<form action="/index.rss" method="get">
+			<fieldset>
+				<legend>カテゴリ</legend>
+				<%
+					categories = [
+												["opening", "オープニング☆トーク"],
+												["perapera", "ペラ☆ペラ"],
+												["3pm", "3時台コラム"],
+												["recommended", "プロデューサーのオススメ☆"]
+												]
+												%>
+				<% categories.each do |i| %>
+					<label>
+						<input type="radio" name="category" value="<%= i[0] %>" /><%= i[1] %>
+					</label><br />
+				<% end %>
+				<label>
+					<input type="radio" name="category" value="" />選択しない
+				</label><br />
+			</fieldset>
+
+
+			<fieldset>
+				<legend>曜日</legend>
+				<%
+					days = [
+									[1, "月"],
+									[2, "火"],
+									[3, "水"],
+									[4, "木"],
+									[5, "金"]
+									]
+									%>
+				<% days.each do |i| %>
+					<label>
+						<input type="radio" name="day" value="<%= i[0] %>" /><%= i[1] %>
+					</label><br />
+				<% end %>
+				<label>
+					<input type="radio" name="day" value="" />選択しない
+				</label><br />
+			</fieldset>
+
+			<div><input type="submit" value="RSS生成" /></div>
+		</form>
+	</body>
+</html>

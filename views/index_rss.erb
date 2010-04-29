@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:content="http://purl.org/rss/1.0/modules/content/"
+   xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd"
+   xmlns:media="http://search.yahoo.com/mrss"
+   version="2.0">
+  <channel>
+    <ttl>60</ttl>
+    <title>キラ☆キラRSSジェネレータ <%=h @categories[params[:category]] unless params[:category].blank? %><%=h params[:day].blank? ? '' : "（#{@wdays[params[:day].to_i]}）" %></title>
+    <link>http://www.tbsradio.jp/kirakira/</link>
+    <description>TBSラジオで月曜～金曜お昼1時から放送！「くだらない」「どうでもいい」一見そんな風に見えるメッセージテーマを日替わりでお出ししております。でも、あ～ら不思議！くだらなく見えたことを、みんなでああだこうだ言ってるうちに、意外な発見が立体視のように浮かび上がって来ます！午後のひととき、そんなキラキラしたラジオ体験を「小島慶子キラ☆キラ」でしてみませんか？メール：kirakira@tbs.co.jp</description>
+    <language>ja</language>
+    <lastBuildDate><%=h Time.now.rfc822 %></lastBuildDate>
+    <copyright>Tokyo Broadcasting System, Inc. All Rights Reserved.</copyright>
+    <category>Comedy</category>
+    <itunes:category text="Comedy"></itunes:category>
+    <itunes:subtitle>毎週月～金 13:00～15:30 放送中！</itunes:subtitle>
+    <image>
+      <url>http://www.tbsradio.jp/kirakira/300_300.jpg</url>
+      <link>http://www.tbsradio.jp/kirakira/</link>
+      <title>小島慶子　キラ☆キラ</title>
+    </image>
+    <itunes:author>TBS RADIO 954kHz</itunes:author>
+    <itunes:summary>TBSラジオで月曜～金曜お昼1時から放送！「くだらない」「どうでもいい」一見そんな風に見えるメッセージテーマを日替わりでお出ししております。でも、あ～ら不思議！くだらなく見えたことを、みんなでああだこうだ言ってるうちに、意外な発見が立体視のように浮かび上がって来ます！午後のひととき、そんなキラキラしたラジオ体験を「小島慶子キラ☆キラ」でしてみませんか？メール：kirakira@tbs.co.jp</itunes:summary>
+    <generator>http://www.sixapart.com/movabletype/</generator>
+    <itunes:owner>
+      <itunes:name>TBS RADIO 954kHz</itunes:name>
+      <itunes:email>kirakira@tbs.co.jp</itunes:email>
+    </itunes:owner>
+    <itunes:image href="http://www.tbsradio.jp/kirakira/300_300.jpg" />
+
+    <% @items.each do |i| %>
+      <%= i.body %>
+    <% end %>
+
+  </channel>
+</rss>
