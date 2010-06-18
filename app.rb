@@ -22,11 +22,11 @@ end
 
 def detect_category(str)
   case str
-  when /オープニング☆トーク\z/
+  when /オープニング☆トーク/
     return "opening"
-  when /ペラ☆ペラ\z/
+  when /ペラ☆ペラ/
     return "perapera"
-  when /プロデューサーのオススメ☆\z/
+  when /プロデューサーのオススメ☆/
     return "recommend"
   else
     return "3pm"
@@ -35,15 +35,15 @@ end
 
 def detect_day(str)
   case str
-  when /（月）/
+  when /（月/
     return 1
-  when /（火）/
+  when /（火/
     return 2
-  when /（水）/
+  when /（水/
     return 3
-  when /（木）/
+  when /（木/
     return 4
-  when /（金）/
+  when /（金/
     return 5
   else
     return 0
