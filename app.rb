@@ -84,7 +84,7 @@ get '/index.rss' do
     "recommended" => "プロデューサーのオススメ☆"
   }
 
-  options = {}
+  options = {:limit => 15}
   options[:order] = [:pubdate.desc]
   options[:category] = params[:category] unless params[:category].blank?
   options[:day] = params[:day] unless params[:day].blank?
